@@ -5,7 +5,7 @@
     <Component class="com.raven.swing.TimePicker" name="timePicker1">
       <Properties>
         <Property name="displayText" type="javax.swing.JTextField" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="timeText"/>
+          <ComponentRef name="default"/>
         </Property>
       </Properties>
     </Component>
@@ -75,15 +75,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="doctorText" pref="129" max="32767" attributes="0"/>
-                              <Component id="timeText" pref="129" max="32767" attributes="0"/>
-                              <Component id="jLabel2" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="docText" pref="129" max="32767" attributes="0"/>
                               <Component id="jLabel1" min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="placeText" alignment="0" pref="129" max="32767" attributes="0"/>
-                              <Component id="jLabel4" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
                               <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jComboBox1" max="32767" attributes="0"/>
+                              <Component id="placeCombo" max="32767" attributes="0"/>
                               <Component id="jLabel3" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="SubjectText" alignment="0" pref="129" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -98,22 +96,18 @@
                   <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                  <Component id="placeCombo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="timeText" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="SubjectText" min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="doctorText" min="-2" pref="24" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                  <Component id="placeText" min="-2" pref="24" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="docText" min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -132,7 +126,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Day"/>
+            <Property name="text" type="java.lang.String" value="Places"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -143,21 +137,8 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Time"/>
+            <Property name="text" type="java.lang.String" value="Subject"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="timeText">
-          <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                <BevelBorder/>
-              </Border>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="timeTextMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="timeTextActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -170,7 +151,7 @@
             <Property name="text" type="java.lang.String" value="Doctor"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="doctorText">
+        <Component class="javax.swing.JTextField" name="docText">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -179,7 +160,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="doctorTextActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="docTextActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
@@ -189,29 +170,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="placeText">
-          <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
-                <BevelBorder/>
-              </Border>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="placeTextActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="33" red="33" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Place"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -227,22 +185,31 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel5MouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="placeCombo">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="7">
-                <StringItem index="0" value="Monday"/>
-                <StringItem index="1" value="Tuesday"/>
-                <StringItem index="2" value="Wednesday"/>
-                <StringItem index="3" value="Thursday"/>
-                <StringItem index="4" value="Friday"/>
-                <StringItem index="5" value="Saturday"/>
-                <StringItem index="6" value="Sunday"/>
+              <StringArray count="16">
+                <StringItem index="0" value="lab 300"/>
+                <StringItem index="1" value="lab 301"/>
+                <StringItem index="2" value="lab 302"/>
+                <StringItem index="3" value="lab 303,"/>
+                <StringItem index="4" value="lab 304"/>
+                <StringItem index="5" value="lab 305"/>
+                <StringItem index="6" value="lab 306"/>
+                <StringItem index="7" value="lab 307"/>
+                <StringItem index="8" value="lab 400"/>
+                <StringItem index="9" value="lab 401"/>
+                <StringItem index="10" value="lab 402"/>
+                <StringItem index="11" value="lab 403"/>
+                <StringItem index="12" value="lab 404"/>
+                <StringItem index="13" value="lab 405"/>
+                <StringItem index="14" value="lab 406"/>
+                <StringItem index="15" value="lab 407"/>
               </StringArray>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="placeComboActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -253,13 +220,25 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Print"/>
+            <Property name="text" type="java.lang.String" value="Show"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="SubjectText">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SubjectTextActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -274,20 +253,14 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="0">
-                <Column editable="true" title="Day" type="java.lang.Object"/>
-                <Column editable="true" title="Time" type="java.lang.Object"/>
+              <Table columnCount="3" rowCount="0">
                 <Column editable="true" title="Doctor" type="java.lang.Object"/>
-                <Column editable="true" title="Place" type="java.lang.Object"/>
+                <Column editable="true" title="Subject" type="java.lang.Object"/>
+                <Column editable="false" title="Places" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>

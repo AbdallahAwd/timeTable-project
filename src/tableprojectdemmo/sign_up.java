@@ -244,9 +244,15 @@ public class sign_up extends javax.swing.JFrame {
             // add to database
             
             connection.prepareStatement("insert into user(name,password,type) values('"+loginName1.getText()+"','"+passwordText.getText()+"',"+adminR.isSelected()+")").executeUpdate();
-          JTableJava second = new JTableJava();   
+            if(adminR.isSelected()){
+               JTableJava second = new JTableJava();   
         setVisible(false); // Hide current frame
         second.setVisible(true);
+            }else {
+               studentT student = new studentT();
+                setVisible(false);
+                student.setVisible(true);
+            }
             }
             
         } catch (Exception e) {

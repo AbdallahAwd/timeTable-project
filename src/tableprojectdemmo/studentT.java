@@ -60,7 +60,7 @@ public class studentT extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Print");
+        jButton3.setText("Show");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -98,7 +98,10 @@ public class studentT extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        System.exit(0);        // TODO add your handling code here:
+        setVisible(false);
+        sign_up sign  = new sign_up();
+        sign.setVisible(true);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

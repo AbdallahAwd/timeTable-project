@@ -171,7 +171,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginName1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         Connection connection = null;
+        Connection connection = null;
         Statement statement = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;

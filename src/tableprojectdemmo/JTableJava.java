@@ -38,19 +38,15 @@ public class JTableJava extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        timeText = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        doctorText = new javax.swing.JTextField();
+        docText = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        placeText = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        placeCombo = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
+        SubjectText = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-
-        timePicker1.setDisplayText(timeText);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Add Table");
@@ -60,32 +56,20 @@ public class JTableJava extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 255));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Day");
+        jLabel1.setText("Places");
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 255));
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Time");
-
-        timeText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        timeText.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                timeTextMouseClicked(evt);
-            }
-        });
-        timeText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                timeTextActionPerformed(evt);
-            }
-        });
+        jLabel2.setText("Subject");
 
         jLabel3.setBackground(new java.awt.Color(51, 51, 255));
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Doctor");
 
-        doctorText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        doctorText.addActionListener(new java.awt.event.ActionListener() {
+        docText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        docText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                doctorTextActionPerformed(evt);
+                docTextActionPerformed(evt);
             }
         });
 
@@ -96,17 +80,6 @@ public class JTableJava extends javax.swing.JFrame {
             }
         });
 
-        placeText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        placeText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                placeTextActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setBackground(new java.awt.Color(51, 51, 255));
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Place");
-
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Log Out");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -116,19 +89,26 @@ public class JTableJava extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        placeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "lab 300", "lab 301", "lab 302", "lab 303,", "lab 304", "lab 305", "lab 306", "lab 307", "lab 400", "lab 401", "lab 402", "lab 403", "lab 404", "lab 405", "lab 406", "lab 407" }));
+        placeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                placeComboActionPerformed(evt);
             }
         });
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Print");
+        jLabel6.setText("Show");
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
+            }
+        });
+
+        SubjectText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        SubjectText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubjectTextActionPerformed(evt);
             }
         });
 
@@ -146,15 +126,13 @@ public class JTableJava extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(doctorText, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                            .addComponent(timeText, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(docText, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(placeText, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(placeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SubjectText, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -164,22 +142,18 @@ public class JTableJava extends javax.swing.JFrame {
                 .addGap(89, 89, 89)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(placeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(timeText, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(SubjectText, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(doctorText, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addGap(9, 9, 9)
-                .addComponent(placeText, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addComponent(docText, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
@@ -191,9 +165,17 @@ public class JTableJava extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Day", "Time", "Doctor", "Place"
+                "Doctor", "Subject", "Places"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -216,53 +198,36 @@ public class JTableJava extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void timeTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeTextActionPerformed
-            // TODO add your handling code here:
-    }//GEN-LAST:event_timeTextActionPerformed
-
-    private void doctorTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorTextActionPerformed
+    private void docTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_doctorTextActionPerformed
+    }//GEN-LAST:event_docTextActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(placeText.getText().equals("")||doctorText.getText().equals("")||timeText.getText().equals("")){
+        if (SubjectText.getText().equals("") || docText.getText().equals("") || SubjectText.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please Enter all required Data");
-           
-        }else {
-            String row[] = {jComboBox1.getSelectedItem().toString(),timeText.getText(),doctorText.getText(),placeText.getText(),};
-            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+
+        } else {
+            String row[] = {docText.getText(), SubjectText.getText(), placeCombo.getSelectedItem().toString()};
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             model.addRow(row);
             Connection connection = null;
-        Statement statement = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/timetable?user=root&password=2 33 444 5555");
-            statement = connection.createStatement();
-            connection.prepareStatement("insert into timetable(day,time,doctor,place) values ('"+row[0]+"','"+row[1]+"','"+row[2]+"','"+row[3]+"');").executeUpdate();
-            
-            
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }        
-            
-            placeText.setText("");
-            doctorText.setText("");
-            timeText.setText("");
+            Statement statement = null;
+            PreparedStatement preparedStatement = null;
+            ResultSet resultSet = null;
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost/timetable?user=root&password=2 33 444 5555");
+                statement = connection.createStatement();
+                connection.prepareStatement("insert into timetable(doctor,subject,place) values ('" + row[0] + "','" + row[1] + "','" + row[2] + "');").executeUpdate();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            docText.setText("");
+            SubjectText.setText("");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void timeTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_timeTextMouseClicked
-//        JOptionPane.showMessageDialog(jTextField2, timeComponent1);   
-// TODO add your handling code here:
-    timePicker1.showPopup(this, 100, 100);
-    }//GEN-LAST:event_timeTextMouseClicked
-
-    private void placeTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_placeTextActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         setVisible(false);
@@ -270,12 +235,12 @@ public class JTableJava extends javax.swing.JFrame {
         log.setVisible(true);
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void placeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeComboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_placeComboActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-       Connection connection = null;
+        Connection connection = null;
         Statement statement = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -285,35 +250,38 @@ public class JTableJava extends javax.swing.JFrame {
             statement = connection.createStatement();
             // add to database
 //            connection.prepareStatement("insert into user(name,password) values('Ahmed','0258')").executeUpdate();
-            
 
-            String day = "";
-            String time ="";
+            String subject = "";
             String doctor = "";
             String place = "";
             //read from database
             resultSet = statement.executeQuery("select * from timetable;");
             while (resultSet.next()) {
-               
-               day = resultSet.getString("day");
-               time = resultSet.getString("time");
-               doctor = resultSet.getString("doctor");
-               place = resultSet.getString("place");
-           if(day.equals("")||time.equals("")||doctor.equals("")||place.equals("")){
-               JOptionPane.showMessageDialog(this, "No TimeTable found");
-            }else {
-                DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-                String row[] = {day,time,doctor,place};
-            model.addRow(row);
-                 
+
+                subject = resultSet.getString("subject");
+                doctor = resultSet.getString("doctor");
+                place = resultSet.getString("place");
+                if (subject.equals("") || doctor.equals("") || place.equals("")) {
+                    JOptionPane.showMessageDialog(this, "No TimeTable found");
+                } else {
+                    jLabel6.setVisible(false);
+                    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                    String row[] = {doctor, subject, place};
+                    model.addRow(row);
+                    setVisible(false);
+                    custom_table table = new custom_table(row);
+                    table.setVisible(true);
+                }
             }
-            }
-            
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void SubjectTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubjectTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubjectTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,20 +320,18 @@ public class JTableJava extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField doctorText;
+    private javax.swing.JTextField SubjectText;
+    private javax.swing.JTextField docText;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField placeText;
+    private javax.swing.JComboBox<String> placeCombo;
     private com.raven.swing.TimePicker timePicker1;
-    private javax.swing.JTextField timeText;
     // End of variables declaration//GEN-END:variables
 }
