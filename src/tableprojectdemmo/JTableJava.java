@@ -4,11 +4,14 @@
  */
 package tableprojectdemmo;
 
+import java.awt.Dialog;
+import java.awt.Label;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -45,6 +48,8 @@ public class JTableJava extends javax.swing.JFrame {
         placeCombo = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         SubjectText = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -112,6 +117,20 @@ public class JTableJava extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Edit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Delete");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -121,7 +140,7 @@ public class JTableJava extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -132,7 +151,9 @@ public class JTableJava extends javax.swing.JFrame {
                             .addComponent(placeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SubjectText, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                            .addComponent(SubjectText, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -153,6 +174,10 @@ public class JTableJava extends javax.swing.JFrame {
                 .addComponent(docText, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -199,7 +224,7 @@ public class JTableJava extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void docTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_docTextActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_docTextActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -244,6 +269,7 @@ public class JTableJava extends javax.swing.JFrame {
         Statement statement = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
+        ArrayList<String []> rows = new ArrayList<String []>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost/timetable?user=root&password=2 33 444 5555");
@@ -254,6 +280,8 @@ public class JTableJava extends javax.swing.JFrame {
             String subject = "";
             String doctor = "";
             String place = "";
+            ArrayList<Integer> Id = new ArrayList<Integer>();
+            int id = 0;
             //read from database
             resultSet = statement.executeQuery("select * from timetable;");
             while (resultSet.next()) {
@@ -261,6 +289,7 @@ public class JTableJava extends javax.swing.JFrame {
                 subject = resultSet.getString("subject");
                 doctor = resultSet.getString("doctor");
                 place = resultSet.getString("place");
+                id = resultSet.getInt("id");
                 if (subject.equals("") || doctor.equals("") || place.equals("")) {
                     JOptionPane.showMessageDialog(this, "No TimeTable found");
                 } else {
@@ -268,11 +297,17 @@ public class JTableJava extends javax.swing.JFrame {
                     DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                     String row[] = {doctor, subject, place};
                     model.addRow(row);
-                    setVisible(false);
-                    custom_table table = new custom_table(row);
-                    table.setVisible(true);
+                    Id.add(id);
+                    rows.add(row); 
                 }
             }
+            
+            setVisible(false);
+            System.out.println(Id);
+            custom_table table = new custom_table(rows,Id);
+            
+                  
+            table.setVisible(true);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -282,6 +317,18 @@ public class JTableJava extends javax.swing.JFrame {
     private void SubjectTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubjectTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SubjectTextActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        setVisible(false);
+        edit_dialog edit = new edit_dialog("edit");
+        edit.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        setVisible(false);
+        edit_dialog edit = new edit_dialog("delete");
+        edit.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,6 +370,8 @@ public class JTableJava extends javax.swing.JFrame {
     private javax.swing.JTextField SubjectText;
     private javax.swing.JTextField docText;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -7,10 +7,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+
 import java.sql.Statement;
-import java.util.Scanner;
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author abdal
@@ -246,13 +248,42 @@ public class sign_up extends javax.swing.JFrame {
             connection.prepareStatement("insert into user(name,password,type) values('"+loginName1.getText()+"','"+passwordText.getText()+"',"+adminR.isSelected()+")").executeUpdate();
             if(adminR.isSelected()){
                JTableJava second = new JTableJava();   
-        setVisible(false); // Hide current frame
-        second.setVisible(true);
+            setVisible(false); // Hide current frame
+            second.setVisible(true);
             }else {
-               studentT student = new studentT();
-                setVisible(false);
-                student.setVisible(true);
+            String subject = "";
+            String doctor = "";
+            String place = "";
+            ArrayList<Integer> Id = new ArrayList<Integer>();
+            int id = 0;
+             ArrayList<String []> rows = new ArrayList<String []>();
+            //read from database
+            resultSet = statement.executeQuery("select * from timetable;");
+            while (resultSet.next()) {
+
+                subject = resultSet.getString("subject");
+                doctor = resultSet.getString("doctor");
+                place = resultSet.getString("place");
+                id = resultSet.getInt("id");
+                if (subject.equals("") || doctor.equals("") || place.equals("")) {
+                    JOptionPane.showMessageDialog(this, "No TimeTable found");
+                } else {
+                    jLabel6.setVisible(false);
+                   
+                    String row[] = {doctor, subject, place,};
+                    
+                    Id.add(id);
+                    rows.add(row);
+                    
+                }
             }
+            System.out.println("Rows Size is " + rows.size());
+                System.out.println(Id);
+            setVisible(false);
+                    custom_table table = new custom_table(rows, Id);
+                   
+                  
+                    table.setVisible(true);            }
             }
             
         } catch (Exception e) {

@@ -4,6 +4,9 @@
  */
 package tableprojectdemmo;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author abdal
@@ -13,70 +16,129 @@ public class custom_table extends javax.swing.JFrame {
     /**
      * Creates new form custom_table
      */
-    static public String cellText[];
+   
+    static ArrayList<String []> cellText = new ArrayList<String []>();
+    ArrayList<javax.swing.JLabel> docName = new ArrayList<javax.swing.JLabel>();
+    ArrayList<javax.swing.JLabel> subName = new ArrayList<javax.swing.JLabel>();
+    ArrayList<javax.swing.JLabel> placeName = new ArrayList<javax.swing.JLabel>();
+    ArrayList<javax.swing.JLabel> IdLabel = new ArrayList<javax.swing.JLabel>();
+    
 
-    public custom_table(String celltext[]) {
+    public custom_table(ArrayList<String []> cellText , ArrayList<Integer> Id) {
         initComponents();
-        cellText = celltext;
-        TLable1.setText(celltext[0]);
-        TLable2.setText(celltext[1]);
-        TLable3.setText(celltext[2]);
-        TLable4.setText(celltext[2]);
-        TLable5.setText(celltext[2]);
-        TLable6.setText(celltext[2]);
-        TLable7.setText(celltext[2]);
-        TLable8.setText(celltext[2]);
-        TLable9.setText(celltext[2]);
-        TLable10.setText(celltext[2]);
-        TLable11.setText(celltext[2]);
-        TLable12.setText(celltext[2]);
-        TLable13.setText(celltext[2]);
-        TLable14.setText(celltext[2]);
-        TLable15.setText(celltext[2]);
-        TLable16.setText(celltext[2]);
-        TLable17.setText(celltext[2]);
-        TLable18.setText(celltext[2]);
-        TLable19.setText(celltext[2]);
-        TLable20.setText(celltext[2]);
-        TLable21.setText(celltext[2]);
-        TLable22.setText(celltext[2]);
-        TLable23.setText(celltext[2]);
-        TLable24.setText(celltext[2]);
-        TLable25.setText(celltext[2]);
-        TLable26.setText(celltext[2]);
-        TLable27.setText(celltext[2]);
-        TLable28.setText(celltext[2]);
-        TLable29.setText(celltext[2]);
-        TLable30.setText(celltext[2]);
-        TLable31.setText(celltext[2]);
-        TLable32.setText(celltext[2]);
-        TLable33.setText(celltext[2]);
-        TLable34.setText(celltext[2]);
-        TLable35.setText(celltext[2]);
-        TLable36.setText(celltext[2]);
-        TLable37.setText(celltext[2]);
-        TLable38.setText(celltext[2]);
-        TLable39.setText(celltext[2]);
-        TLable40.setText(celltext[2]);
-        TLable41.setText(celltext[2]);
-        TLable42.setText(celltext[2]);
-        TLable43.setText(celltext[2]);
-        TLable44.setText(celltext[2]);
-        TLable45.setText(celltext[2]);
-        TLable46.setText(celltext[2]);
-        TLable47.setText(celltext[2]);
-        TLable48.setText(celltext[2]);
-        TLable49.setText(celltext[2]);
-        TLable50.setText(celltext[2]);
-        TLable51.setText(celltext[2]);
-        TLable52.setText(celltext[2]);
-        TLable53.setText(celltext[2]);
-        TLable54.setText(celltext[2]);
-
-
-
+        
+        this.cellText.addAll(cellText);
+        
+        addDoctor();
+        addSubeject();
+        addPlace();
+        addId();
+         for (int i = 0 ; i < 18 ; i++) {
+           docName.get(i).setText("     ");
+           subName.get(i).setText("     ");
+           placeName.get(i).setText("       ");
+           IdLabel.get(i).setText("");
+        }
+        
+        
+        if(this.cellText.size() <= 18){
+        for (int i = 0 ; i < this.cellText.size()  ; i++) {
+           docName.get(i).setText(cellText.get(i)[0]);
+           subName.get(i).setText(cellText.get(i)[1]);
+           placeName.get(i).setText(cellText.get(i)[2]);
+           
+           IdLabel.get(i).setText(Id.get(i).toString());
+        }
+        }
+        
     }
-
+    
+    
+    
+    
+    public  void addDoctor() {
+        docName.add(TLable1);
+        docName.add(TLable2);
+        docName.add(TLable3);
+        docName.add(TLable4);
+        docName.add(TLable5);
+        docName.add(TLable6);
+        docName.add(TLable7);
+        docName.add(TLable8);
+        docName.add(TLable9);
+        docName.add(TLable10);
+        docName.add(TLable11);
+        docName.add(TLable12);
+        docName.add(TLable13);
+        docName.add(TLable14);
+        docName.add(TLable15);
+        docName.add(TLable16);
+        docName.add(TLable17);
+        docName.add(TLable18);
+    }
+    
+    public void addSubeject(){
+        subName.add(subLabel1);
+        subName.add(subLabel2);
+        subName.add(subLabel3);
+        subName.add(subLabel4);
+        subName.add(subLabel5);
+        subName.add(subLabel6);
+        subName.add(subLabel7);
+        subName.add(subLabel8);
+        subName.add(subLabel9);
+        subName.add(subLabel10);
+        subName.add(subLabel11);
+        subName.add(subLabel12);
+        subName.add(subLabel13);
+        subName.add(subLabel14);
+        subName.add(subLabel15);
+        subName.add(subLabel16);
+        subName.add(subLabel17);
+        subName.add(subLabel18);
+    }
+    
+    public void addPlace(){
+        placeName.add(placeLabel1);
+        placeName.add(placeLabel2);
+        placeName.add(placeLabel3);
+        placeName.add(placeLabel4);
+        placeName.add(placeLabel5);
+        placeName.add(placeLabel6);
+        placeName.add(placeLabel7);
+        placeName.add(placeLabel8);
+        placeName.add(placeLabel9);
+        placeName.add(placeLabel10);
+        placeName.add(placeLabel11);
+        placeName.add(placeLabel12);
+        placeName.add(placeLabel13);
+        placeName.add(placeLabel14);
+        placeName.add(placeLabel15);
+        placeName.add(placeLabel16);
+        placeName.add(placeLabel17);
+        placeName.add(placeLabel18);
+    }
+    
+       public  void addId() {
+        IdLabel.add(idLabel1);
+        IdLabel.add(idLabel2);
+        IdLabel.add(idLabel3);
+        IdLabel.add(idLabel4);
+        IdLabel.add(idLabel5);
+        IdLabel.add(idLabel6);
+        IdLabel.add(idLabel7);
+        IdLabel.add(idLabel8);
+        IdLabel.add(idLabel9);
+        IdLabel.add(idLabel10);
+        IdLabel.add(idLabel11);
+        IdLabel.add(idLabel12);
+        IdLabel.add(idLabel13);
+        IdLabel.add(idLabel14);
+        IdLabel.add(idLabel15);
+        IdLabel.add(idLabel16);
+        IdLabel.add(idLabel17);
+        IdLabel.add(idLabel18);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -140,45 +202,65 @@ public class custom_table extends javax.swing.JFrame {
         TLable16 = new javax.swing.JLabel();
         TLable17 = new javax.swing.JLabel();
         TLable18 = new javax.swing.JLabel();
-        TLable19 = new javax.swing.JLabel();
-        TLable20 = new javax.swing.JLabel();
-        TLable21 = new javax.swing.JLabel();
-        TLable22 = new javax.swing.JLabel();
-        TLable23 = new javax.swing.JLabel();
-        TLable24 = new javax.swing.JLabel();
-        TLable25 = new javax.swing.JLabel();
-        TLable26 = new javax.swing.JLabel();
-        TLable27 = new javax.swing.JLabel();
-        TLable28 = new javax.swing.JLabel();
-        TLable29 = new javax.swing.JLabel();
-        TLable30 = new javax.swing.JLabel();
-        TLable31 = new javax.swing.JLabel();
-        TLable32 = new javax.swing.JLabel();
-        TLable33 = new javax.swing.JLabel();
-        TLable34 = new javax.swing.JLabel();
-        TLable35 = new javax.swing.JLabel();
-        TLable36 = new javax.swing.JLabel();
-        TLable37 = new javax.swing.JLabel();
-        TLable38 = new javax.swing.JLabel();
-        TLable39 = new javax.swing.JLabel();
-        TLable40 = new javax.swing.JLabel();
-        TLable41 = new javax.swing.JLabel();
-        TLable42 = new javax.swing.JLabel();
-        TLable43 = new javax.swing.JLabel();
-        TLable44 = new javax.swing.JLabel();
-        TLable45 = new javax.swing.JLabel();
-        TLable46 = new javax.swing.JLabel();
-        TLable47 = new javax.swing.JLabel();
-        TLable48 = new javax.swing.JLabel();
-        TLable49 = new javax.swing.JLabel();
-        TLable50 = new javax.swing.JLabel();
-        TLable51 = new javax.swing.JLabel();
-        TLable52 = new javax.swing.JLabel();
-        TLable53 = new javax.swing.JLabel();
-        TLable54 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        subLabel1 = new javax.swing.JLabel();
+        subLabel2 = new javax.swing.JLabel();
+        subLabel3 = new javax.swing.JLabel();
+        subLabel5 = new javax.swing.JLabel();
+        subLabel4 = new javax.swing.JLabel();
+        subLabel6 = new javax.swing.JLabel();
+        subLabel9 = new javax.swing.JLabel();
+        subLabel7 = new javax.swing.JLabel();
+        subLabel8 = new javax.swing.JLabel();
+        subLabel10 = new javax.swing.JLabel();
+        subLabel11 = new javax.swing.JLabel();
+        subLabel12 = new javax.swing.JLabel();
+        subLabel13 = new javax.swing.JLabel();
+        subLabel14 = new javax.swing.JLabel();
+        subLabel15 = new javax.swing.JLabel();
+        subLabel17 = new javax.swing.JLabel();
+        subLabel16 = new javax.swing.JLabel();
+        subLabel18 = new javax.swing.JLabel();
+        placeLabel1 = new javax.swing.JLabel();
+        placeLabel2 = new javax.swing.JLabel();
+        placeLabel3 = new javax.swing.JLabel();
+        placeLabel4 = new javax.swing.JLabel();
+        placeLabel5 = new javax.swing.JLabel();
+        placeLabel6 = new javax.swing.JLabel();
+        placeLabel7 = new javax.swing.JLabel();
+        placeLabel8 = new javax.swing.JLabel();
+        placeLabel9 = new javax.swing.JLabel();
+        placeLabel10 = new javax.swing.JLabel();
+        placeLabel11 = new javax.swing.JLabel();
+        placeLabel12 = new javax.swing.JLabel();
+        placeLabel14 = new javax.swing.JLabel();
+        placeLabel15 = new javax.swing.JLabel();
+        placeLabel13 = new javax.swing.JLabel();
+        placeLabel16 = new javax.swing.JLabel();
+        placeLabel17 = new javax.swing.JLabel();
+        placeLabel18 = new javax.swing.JLabel();
+        idLabel1 = new javax.swing.JLabel();
+        idLabel2 = new javax.swing.JLabel();
+        idLabel3 = new javax.swing.JLabel();
+        idLabel4 = new javax.swing.JLabel();
+        idLabel6 = new javax.swing.JLabel();
+        idLabel7 = new javax.swing.JLabel();
+        idLabel8 = new javax.swing.JLabel();
+        idLabel9 = new javax.swing.JLabel();
+        idLabel10 = new javax.swing.JLabel();
+        idLabel11 = new javax.swing.JLabel();
+        idLabel12 = new javax.swing.JLabel();
+        idLabel13 = new javax.swing.JLabel();
+        idLabel14 = new javax.swing.JLabel();
+        idLabel15 = new javax.swing.JLabel();
+        idLabel16 = new javax.swing.JLabel();
+        idLabel17 = new javax.swing.JLabel();
+        idLabel18 = new javax.swing.JLabel();
+        idLabel5 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -222,115 +304,52 @@ public class custom_table extends javax.swing.JFrame {
 
         jLabel9.setText("1:00");
 
-        TLable1.setText("Tlable1");
-
-        TLable2.setText("Tlable2");
-
-        TLable3.setText("Tlable3");
-
-        TLable4.setText("Tlable4");
-
-        TLable5.setText("Tlable5");
-
-        TLable6.setText("Tlable6");
-
-        TLable7.setText("Tlable7");
-
-        TLable8.setText("Tlable8");
-
-        TLable9.setText("Tlable9");
-
-        TLable10.setText("Tlable11");
-
-        TLable11.setText("Tlable10");
-
-        TLable12.setText("Tlable12");
-
-        TLable13.setText("Tlable13");
-
-        TLable14.setText("Tlable14");
-
-        TLable15.setText("Tlable15");
-
-        TLable16.setText("Tlable18");
-
-        TLable17.setText("Tlable17");
-
-        TLable18.setText("Tlable16");
-
-        TLable19.setText("Tlable21");
-
-        TLable20.setText("Tlable19");
-
-        TLable21.setText("Tlable20");
-
-        TLable22.setText("Tlable19");
-
-        TLable23.setText("Tlable20");
-
-        TLable24.setText("Tlable21");
-
-        TLable25.setText("Tlable19");
-
-        TLable26.setText("Tlable20");
-
-        TLable27.setText("Tlable21");
-
-        TLable28.setText("Tlable19");
-
-        TLable29.setText("Tlable20");
-
-        TLable30.setText("Tlable21");
-
-        TLable31.setText("Tlable19");
-
-        TLable32.setText("Tlable20");
-
-        TLable33.setText("Tlable21");
-
-        TLable34.setText("Tlable19");
-
-        TLable35.setText("Tlable20");
-
-        TLable36.setText("Tlable21");
-
-        TLable37.setText("Tlable19");
-
-        TLable38.setText("Tlable20");
-
-        TLable39.setText("Tlable21");
-
-        TLable40.setText("Tlable19");
-
-        TLable41.setText("Tlable20");
-
-        TLable42.setText("Tlable21");
-
-        TLable43.setText("Tlable19");
-
-        TLable44.setText("Tlable20");
-
-        TLable45.setText("Tlable21");
-
-        TLable46.setText("Tlable19");
-
-        TLable47.setText("Tlable20");
-
-        TLable48.setText("Tlable21");
-
-        TLable49.setText("Tlable19");
-
-        TLable50.setText("Tlable20");
-
-        TLable51.setText("Tlable21");
-
-        TLable52.setText("Tlable19");
-
-        TLable53.setText("Tlable20");
-
-        TLable54.setText("Tlable21");
+        TLable5.setToolTipText("");
 
         jLabel10.setText("Time");
+
+        idLabel1.setText("id");
+
+        idLabel2.setText("id");
+
+        idLabel3.setText("id");
+
+        idLabel4.setText("id");
+
+        idLabel6.setText("id");
+
+        idLabel7.setText("id");
+
+        idLabel8.setText("id");
+
+        idLabel9.setText("id");
+
+        idLabel10.setText("id");
+
+        idLabel11.setText("id");
+
+        idLabel12.setText("id");
+
+        idLabel13.setText("id");
+
+        idLabel14.setText("id");
+
+        idLabel15.setText("id");
+
+        idLabel16.setText("id");
+
+        idLabel17.setText("id");
+
+        idLabel18.setText("id");
+
+        idLabel5.setText("id");
+
+        jLabel11.setText("X");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -352,6 +371,218 @@ public class custom_table extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(subLabel2)
+                                    .addComponent(TLable2)
+                                    .addComponent(placeLabel2)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(subLabel3)
+                                    .addComponent(TLable3)
+                                    .addComponent(placeLabel3)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(subLabel1)
+                                    .addComponent(TLable1)
+                                    .addComponent(placeLabel1)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(subLabel6)
+                                    .addComponent(TLable6)
+                                    .addComponent(placeLabel6)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(placeLabel4)
+                                    .addComponent(TLable4)
+                                    .addComponent(subLabel4)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel6))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(TLable5)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(placeLabel5)
+                                        .addComponent(subLabel5))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel5)))
+                        .addGap(12, 12, 12)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jSeparator18, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                                    .addComponent(jSeparator24)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(subLabel7)
+                                    .addComponent(TLable7)
+                                    .addComponent(placeLabel7)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(subLabel9)
+                                    .addComponent(TLable9)
+                                    .addComponent(placeLabel9)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(subLabel8)
+                                    .addComponent(TLable8)
+                                    .addComponent(placeLabel8)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel7))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel9))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel8)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(subLabel10)
+                                    .addComponent(TLable10)
+                                    .addComponent(placeLabel10)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(subLabel11)
+                                    .addComponent(TLable11)
+                                    .addComponent(placeLabel11)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(TLable12)
+                                    .addComponent(subLabel12, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(placeLabel12, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel10))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel12))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel11)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(54, 54, 54)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(subLabel13)
+                                            .addComponent(TLable13)
+                                            .addComponent(placeLabel13)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(52, 52, 52)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(subLabel14)
+                                            .addComponent(TLable14)
+                                            .addComponent(placeLabel14)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(53, 53, 53)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(subLabel15)
+                                            .addComponent(TLable15)
+                                            .addComponent(placeLabel15)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(idLabel13)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator20)
+                                    .addComponent(jSeparator26)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(idLabel14)
+                                            .addComponent(idLabel15))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(idLabel17)
+                                    .addComponent(idLabel18)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(subLabel17)
+                                    .addComponent(TLable17)
+                                    .addComponent(placeLabel17)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(subLabel18)
+                                    .addComponent(TLable18)
+                                    .addComponent(placeLabel18)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(TLable16)
+                                    .addComponent(subLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(placeLabel16, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idLabel16)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(jLabel1)
@@ -371,180 +602,19 @@ public class custom_table extends javax.swing.JFrame {
                         .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                         .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addGap(43, 43, 43))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable2)
-                                    .addComponent(TLable1)
-                                    .addComponent(TLable3)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable5)
-                                    .addComponent(TLable4)
-                                    .addComponent(TLable6)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable8)
-                                    .addComponent(TLable7)
-                                    .addComponent(TLable9))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable10)
-                                    .addComponent(TLable11)
-                                    .addComponent(TLable12)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable14)
-                                    .addComponent(TLable13)
-                                    .addComponent(TLable15)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable17)
-                                    .addComponent(TLable18)
-                                    .addComponent(TLable16))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jSeparator18, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                                    .addComponent(jSeparator24)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable21)
-                                    .addComponent(TLable20)
-                                    .addComponent(TLable19)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable23)
-                                    .addComponent(TLable22)
-                                    .addComponent(TLable24)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable26)
-                                    .addComponent(TLable25)
-                                    .addComponent(TLable27))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable29)
-                                    .addComponent(TLable28)
-                                    .addComponent(TLable30)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable32)
-                                    .addComponent(TLable31)
-                                    .addComponent(TLable33)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable35)
-                                    .addComponent(TLable34)
-                                    .addComponent(TLable36))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jSeparator20)
-                                            .addComponent(jSeparator26)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(54, 54, 54)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(TLable38)
-                                                    .addComponent(TLable37)
-                                                    .addComponent(TLable39)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(52, 52, 52)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(TLable41)
-                                                    .addComponent(TLable40)
-                                                    .addComponent(TLable42))))
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable44)
-                                    .addComponent(TLable43)
-                                    .addComponent(TLable45))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable47)
-                                    .addComponent(TLable46)
-                                    .addComponent(TLable48)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable50)
-                                    .addComponent(TLable49)
-                                    .addComponent(TLable51)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TLable53)
-                                    .addComponent(TLable52)
-                                    .addComponent(TLable54))))
-                        .addContainerGap())))
+                                .addComponent(jLabel6)
+                                .addGap(53, 53, 53))
+                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -570,6 +640,8 @@ public class custom_table extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -577,15 +649,6 @@ public class custom_table extends javax.swing.JFrame {
                         .addGap(18, 18, 18)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
-                            .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator4)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator3)
-                            .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addComponent(jLabel7)
@@ -595,170 +658,214 @@ public class custom_table extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addGap(70, 70, 70)
                         .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(59, 59, 59)
                         .addComponent(jLabel9)
-                        .addGap(59, 59, 59))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(37, 37, 37)
-                                    .addComponent(TLable1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TLable2)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TLable3)
-                                    .addGap(53, 53, 53)
-                                    .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(39, 39, 39)
-                                    .addComponent(TLable11)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TLable10)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TLable12)
-                                    .addGap(50, 50, 50)
-                                    .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(43, 43, 43)
-                                    .addComponent(TLable46)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TLable47)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TLable48)
-                                    .addGap(47, 47, 47)
-                                    .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(34, 34, 34)
-                                    .addComponent(TLable20)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TLable21)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TLable19)
-                                    .addGap(56, 56, 56)
-                                    .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(32, 32, 32)
-                                    .addComponent(TLable37)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TLable38)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(TLable39)
-                                    .addGap(55, 55, 55)
-                                    .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator4)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator3)
+                            .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(TLable28)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable29)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGap(37, 37, 37)
+                                                    .addComponent(TLable1)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                    .addComponent(subLabel1)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(placeLabel1)
+                                                    .addGap(71, 71, 71)
+                                                    .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                            .addGap(39, 39, 39)
+                                                            .addComponent(TLable4)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                            .addComponent(subLabel4)
+                                                            .addGap(11, 11, 11)
+                                                            .addComponent(placeLabel4))
+                                                        .addComponent(idLabel4))
+                                                    .addGap(63, 63, 63)
+                                                    .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGap(6, 6, 6)
+                                                    .addComponent(idLabel16)
+                                                    .addGap(22, 22, 22)
+                                                    .addComponent(TLable16)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(subLabel16)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                    .addComponent(placeLabel16)
+                                                    .addGap(53, 53, 53)
+                                                    .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                            .addGap(34, 34, 34)
+                                                            .addComponent(TLable7)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(subLabel7)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                            .addComponent(placeLabel7))
+                                                        .addComponent(idLabel7))
+                                                    .addGap(74, 74, 74)
+                                                    .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                            .addGap(32, 32, 32)
+                                                            .addComponent(TLable13)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(subLabel13)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                            .addComponent(placeLabel13))
+                                                        .addComponent(idLabel13))
+                                                    .addGap(73, 73, 73)
+                                                    .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(30, 30, 30)
+                                                        .addComponent(TLable10)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(subLabel10)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(placeLabel10))
+                                                    .addComponent(idLabel10))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(3, 3, 3)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(26, 26, 26)
+                                                .addComponent(TLable17)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(subLabel17)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(placeLabel17)
+                                                .addGap(38, 38, 38)
+                                                .addComponent(idLabel17)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(27, 27, 27)
+                                                .addComponent(TLable8)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(subLabel8)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(placeLabel8)
+                                                .addGap(34, 34, 34)
+                                                .addComponent(idLabel8)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(15, 15, 15)
+                                                .addComponent(TLable11)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(subLabel11)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(placeLabel11)
+                                                .addGap(45, 45, 45)
+                                                .addComponent(idLabel11)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(16, 16, 16)
+                                                .addComponent(TLable14)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(subLabel14)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(placeLabel14)
+                                                .addGap(40, 40, 40)
+                                                .addComponent(idLabel14)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(25, 25, 25)
+                                                .addComponent(TLable5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(subLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(placeLabel5)
+                                                .addGap(31, 31, 31)
+                                                .addComponent(idLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(28, 28, 28)
+                                                .addComponent(TLable2)
+                                                .addGap(15, 15, 15)
+                                                .addComponent(subLabel2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(placeLabel2)
+                                                .addGap(29, 29, 29)
+                                                .addComponent(idLabel2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(15, 15, 15)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(31, 31, 31)
+                                                .addComponent(TLable3))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(32, 32, 32)
+                                                .addComponent(TLable6))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(34, 34, 34)
+                                                .addComponent(TLable9))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(24, 24, 24)
+                                                .addComponent(TLable12))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(25, 25, 25)
+                                                .addComponent(TLable15))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(33, 33, 33)
+                                                .addComponent(TLable18)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(subLabel3)
+                                            .addComponent(subLabel6)
+                                            .addComponent(subLabel9)
+                                            .addComponent(subLabel15)
+                                            .addComponent(subLabel18)
+                                            .addComponent(subLabel12))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(placeLabel3)
+                                            .addComponent(placeLabel9)
+                                            .addComponent(placeLabel12)
+                                            .addComponent(placeLabel15)
+                                            .addComponent(placeLabel18)
+                                            .addComponent(placeLabel6)))
+                                    .addComponent(idLabel1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(3, 3, 3)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(TLable4)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable5)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable6)
-                                .addGap(38, 38, 38)
-                                .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(TLable13)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable14)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable15)
-                                .addGap(40, 40, 40)
-                                .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(TLable49)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable50)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable51)
-                                .addGap(35, 35, 35)
-                                .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(TLable22)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable23)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable24)
-                                .addGap(37, 37, 37)
-                                .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(TLable31)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable32)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable33)
-                                .addGap(48, 48, 48)
-                                .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(TLable40)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable41)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable42)
-                                .addGap(43, 43, 43)
-                                .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(TLable7)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable8)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable9))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(TLable18)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable17)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable16))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(TLable25)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable26)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable27))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addComponent(TLable34)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable35)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable36))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(TLable43)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable44)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable45))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(TLable52)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable53)
-                                .addGap(18, 18, 18)
-                                .addComponent(TLable54)))
-                        .addContainerGap())))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(idLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(idLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(idLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(idLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(idLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(idLabel18, javax.swing.GroupLayout.Alignment.TRAILING)))))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        setVisible(false);
+        JTableJava table = new JTableJava();
+        table.setVisible(true);
+    }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
      * @param args the command line arguments
@@ -791,7 +898,7 @@ public class custom_table extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
 
-                new custom_table(cellText).setVisible(true);
+//                new custom_table(cellText).setVisible(true);
             }
         });
     }
@@ -807,52 +914,35 @@ public class custom_table extends javax.swing.JFrame {
     private javax.swing.JLabel TLable16;
     private javax.swing.JLabel TLable17;
     private javax.swing.JLabel TLable18;
-    private javax.swing.JLabel TLable19;
     private javax.swing.JLabel TLable2;
-    private javax.swing.JLabel TLable20;
-    private javax.swing.JLabel TLable21;
-    private javax.swing.JLabel TLable22;
-    private javax.swing.JLabel TLable23;
-    private javax.swing.JLabel TLable24;
-    private javax.swing.JLabel TLable25;
-    private javax.swing.JLabel TLable26;
-    private javax.swing.JLabel TLable27;
-    private javax.swing.JLabel TLable28;
-    private javax.swing.JLabel TLable29;
     private javax.swing.JLabel TLable3;
-    private javax.swing.JLabel TLable30;
-    private javax.swing.JLabel TLable31;
-    private javax.swing.JLabel TLable32;
-    private javax.swing.JLabel TLable33;
-    private javax.swing.JLabel TLable34;
-    private javax.swing.JLabel TLable35;
-    private javax.swing.JLabel TLable36;
-    private javax.swing.JLabel TLable37;
-    private javax.swing.JLabel TLable38;
-    private javax.swing.JLabel TLable39;
     private javax.swing.JLabel TLable4;
-    private javax.swing.JLabel TLable40;
-    private javax.swing.JLabel TLable41;
-    private javax.swing.JLabel TLable42;
-    private javax.swing.JLabel TLable43;
-    private javax.swing.JLabel TLable44;
-    private javax.swing.JLabel TLable45;
-    private javax.swing.JLabel TLable46;
-    private javax.swing.JLabel TLable47;
-    private javax.swing.JLabel TLable48;
-    private javax.swing.JLabel TLable49;
     private javax.swing.JLabel TLable5;
-    private javax.swing.JLabel TLable50;
-    private javax.swing.JLabel TLable51;
-    private javax.swing.JLabel TLable52;
-    private javax.swing.JLabel TLable53;
-    private javax.swing.JLabel TLable54;
     private javax.swing.JLabel TLable6;
     private javax.swing.JLabel TLable7;
     private javax.swing.JLabel TLable8;
     private javax.swing.JLabel TLable9;
+    private javax.swing.JLabel idLabel1;
+    private javax.swing.JLabel idLabel10;
+    private javax.swing.JLabel idLabel11;
+    private javax.swing.JLabel idLabel12;
+    private javax.swing.JLabel idLabel13;
+    private javax.swing.JLabel idLabel14;
+    private javax.swing.JLabel idLabel15;
+    private javax.swing.JLabel idLabel16;
+    private javax.swing.JLabel idLabel17;
+    private javax.swing.JLabel idLabel18;
+    private javax.swing.JLabel idLabel2;
+    private javax.swing.JLabel idLabel3;
+    private javax.swing.JLabel idLabel4;
+    private javax.swing.JLabel idLabel5;
+    private javax.swing.JLabel idLabel6;
+    private javax.swing.JLabel idLabel7;
+    private javax.swing.JLabel idLabel8;
+    private javax.swing.JLabel idLabel9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -888,5 +978,41 @@ public class custom_table extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JLabel placeLabel1;
+    private javax.swing.JLabel placeLabel10;
+    private javax.swing.JLabel placeLabel11;
+    private javax.swing.JLabel placeLabel12;
+    private javax.swing.JLabel placeLabel13;
+    private javax.swing.JLabel placeLabel14;
+    private javax.swing.JLabel placeLabel15;
+    private javax.swing.JLabel placeLabel16;
+    private javax.swing.JLabel placeLabel17;
+    private javax.swing.JLabel placeLabel18;
+    private javax.swing.JLabel placeLabel2;
+    private javax.swing.JLabel placeLabel3;
+    private javax.swing.JLabel placeLabel4;
+    private javax.swing.JLabel placeLabel5;
+    private javax.swing.JLabel placeLabel6;
+    private javax.swing.JLabel placeLabel7;
+    private javax.swing.JLabel placeLabel8;
+    private javax.swing.JLabel placeLabel9;
+    private javax.swing.JLabel subLabel1;
+    private javax.swing.JLabel subLabel10;
+    private javax.swing.JLabel subLabel11;
+    private javax.swing.JLabel subLabel12;
+    private javax.swing.JLabel subLabel13;
+    private javax.swing.JLabel subLabel14;
+    private javax.swing.JLabel subLabel15;
+    private javax.swing.JLabel subLabel16;
+    private javax.swing.JLabel subLabel17;
+    private javax.swing.JLabel subLabel18;
+    private javax.swing.JLabel subLabel2;
+    private javax.swing.JLabel subLabel3;
+    private javax.swing.JLabel subLabel4;
+    private javax.swing.JLabel subLabel5;
+    private javax.swing.JLabel subLabel6;
+    private javax.swing.JLabel subLabel7;
+    private javax.swing.JLabel subLabel8;
+    private javax.swing.JLabel subLabel9;
     // End of variables declaration//GEN-END:variables
 }
